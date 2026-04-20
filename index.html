@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pelmeni.dev</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(37,99,235,0.10), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(99,102,241,0.10), transparent 40%),
+        linear-gradient(180deg,#f8fafc,#eef2f7);
+    color:#0f172a;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(248,250,252,0.7);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(15,23,42,0.06);
+    padding:16px 0;
+    z-index:100;
+}
+
+.nav-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+/* BRAND */
+.logo{
+    font-weight:600;
+    letter-spacing:-0.5px;
+}
+
+/* LAYOUT */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* HERO (ФИНАЛЬНЫЙ УРОВЕНЬ) */
+.hero{
+    padding:190px 0 100px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:600;
+    letter-spacing:-1.5px;
+    margin-bottom:18px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    font-size:18px;
+    color:#475569;
+    max-width:720px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* CTA */
+.btn{
+    display:inline-block;
+    margin-top:32px;
+    padding:14px 24px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.25s;
+    box-shadow:0 12px 30px rgba(37,99,235,0.25);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 50px rgba(37,99,235,0.35);
+}
+
+/* SECTIONS */
+.section{
+    padding:80px 0;
+    opacity:0;
+    transform:translateY(25px);
+    transition:0.8s ease;
+}
+
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* HEADINGS */
+.section h2{
+    font-size:30px;
+    margin-bottom:22px;
+    text-align:center;
+    letter-spacing:-0.5px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+    margin-top:30px;
+}
+
+/* CARD (дороже ощущение) */
+.card{
+    background:rgba(255,255,255,0.78);
+    border:1px solid rgba(15,23,42,0.06);
+    border-radius:18px;
+    padding:26px;
+
+    box-shadow:
+        0 15px 40px rgba(15,23,42,0.08),
+        0 1px 0 rgba(255,255,255,0.7) inset;
+
+    backdrop-filter: blur(12px);
+    transition:0.35s ease;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(15,23,42,0.15);
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.card p{
+    opacity:0.85;
+    line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:60px 20px;
+    color:#94a3b8;
+    border-top:1px solid rgba(15,23,42,0.06);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="logo">pelmeni.dev</div>
+        <div class="muted">быстро. просто. без лишнего</div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>pelmeni.dev</h1>
+
+        <p>
+            Разрабатываю сайты и Telegram-ботов с упором на скорость, простоту и реальный результат.
+            Использую современные AI-инструменты, чтобы быстро собирать рабочие и аккуратные решения без лишней бюрократии.
+        </p>
+
+        <a href="#contact" class="btn">Обсудить проект</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+    <div class="container">
+        <h2>Кто я</h2>
+
+        <p style="text-align:center;color:#475569;max-width:700px;margin:auto;line-height:1.6">
+            Я занимаюсь небольшими веб-проектами и автоматизацией.
+            Беру как коммерческие задачи, так и интересные идеи для портфолио — иногда даже бесплатно, если проект выглядит перспективно.
+        </p>
+    </div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+    <div class="container">
+        <h2>Почему со мной работают</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Быстро</h3>
+                <p>Фокус на результате без лишних процессов и ожиданий.</p>
+            </div>
+
+            <div class="card">
+                <h3>Просто</h3>
+                <p>Без сложных схем — только понятная разработка и общение.</p>
+            </div>
+
+            <div class="card">
+                <h3>Адекватно</h3>
+                <p>Честно говорю, что можно сделать, а что нет.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+    <div class="container">
+        <h2>Что делаю</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Сайты</h3>
+                <p>Лендинги, визитки, простые сервисы.</p>
+            </div>
+
+            <div class="card">
+                <h3>Telegram-боты</h3>
+                <p>Автоматизация задач и простые системы.</p>
+            </div>
+
+            <div class="card">
+                <h3>Прототипы</h3>
+                <p>Быстрая проверка идей и MVP.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICES -->
+<section class="section">
+    <div class="container">
+        <h2>Цены</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Сайт</h3>
+                <p>от 3 000 ₽</p>
+            </div>
+
+            <div class="card">
+                <h3>Лендинг</h3>
+                <p>от 5 000 ₽</p>
+            </div>
+
+            <div class="card">
+                <h3>Бот</h3>
+                <p>от 2 500 ₽</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <div class="container">
+        <h2>Связь</h2>
+
+        <p style="text-align:center;color:#475569;max-width:700px;margin:auto">
+            Напиши в Telegram — обсудим проект, кофе и почему сайт вообще нужен.
+        </p>
+
+        <div style="text-align:center">
+            <a href="https://t.me/yourusername" class="btn">Написать в Telegram</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 pelmeni.dev
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('show');
+        }
+    });
+},{threshold:0.15});
+
+sections.forEach(s=>observer.observe(s));
+</script>
+
+</body>
+</html>
