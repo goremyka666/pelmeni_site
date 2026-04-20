@@ -185,6 +185,53 @@ footer{
     color:#94a3b8;
     border-top:1px solid rgba(15,23,42,0.06);
 }
+
+    @media (max-width: 600px){
+
+    /* HERO */
+    .hero{
+        padding:140px 0 70px;
+    }
+
+    .hero h1{
+        font-size:40px;
+        line-height:1.1;
+        word-break:break-word;
+        overflow-wrap:break-word;
+    }
+
+    .hero p{
+        font-size:16px;
+        padding:0 10px;
+    }
+
+    /* CONTAINER */
+    .container{
+        padding:0 16px;
+    }
+
+    /* NAV */
+    nav .nav-inner{
+        flex-direction:column;
+        gap:6px;
+        align-items:flex-start;
+    }
+
+    /* GRID → 1 колонка на телефоне */
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    /* CARD */
+    .card{
+        padding:18px;
+    }
+
+    /* SECTIONS */
+    .section{
+        padding:60px 0;
+    }
+}
 </style>
 </head>
 
