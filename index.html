@@ -8,15 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:'Inter',sans-serif;
     background:
-        radial-gradient(circle at 20% 10%, rgba(37,99,235,0.10), transparent 45%),
-        radial-gradient(circle at 80% 0%, rgba(99,102,241,0.10), transparent 40%),
+        radial-gradient(circle at 20% 10%, rgba(37,99,235,0.14), transparent 50%),
+        radial-gradient(circle at 80% 0%, rgba(99,102,241,0.12), transparent 45%),
         linear-gradient(180deg,#f8fafc,#eef2f7);
     color:#0f172a;
+    overflow-x:hidden;
 }
 
 /* NAV */
@@ -24,8 +29,8 @@ nav{
     position:fixed;
     width:100%;
     top:0;
-    background:rgba(248,250,252,0.7);
-    backdrop-filter:blur(16px);
+    background:rgba(248,250,252,0.65);
+    backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(15,23,42,0.06);
     padding:16px 0;
     z-index:100;
@@ -39,10 +44,9 @@ nav{
     padding:0 20px;
 }
 
-/* BRAND */
 .logo{
-    font-weight:600;
-    letter-spacing:-0.5px;
+    font-weight:700;
+    letter-spacing:-0.6px;
 }
 
 /* LAYOUT */
@@ -52,15 +56,15 @@ nav{
     padding:0 20px;
 }
 
-/* HERO (ФИНАЛЬНЫЙ УРОВЕНЬ) */
+/* HERO */
 .hero{
-    padding:190px 0 100px;
+    padding:190px 0 110px;
     text-align:center;
 }
 
 .hero h1{
     font-size:64px;
-    font-weight:600;
+    font-weight:700;
     letter-spacing:-1.5px;
     margin-bottom:18px;
     background:linear-gradient(135deg,#2563eb,#4f46e5);
@@ -73,7 +77,7 @@ nav{
     color:#475569;
     max-width:720px;
     margin:auto;
-    line-height:1.6;
+    line-height:1.8;
 }
 
 /* CTA */
@@ -86,21 +90,24 @@ nav{
     color:white;
     text-decoration:none;
     font-weight:500;
-    transition:0.25s;
-    box-shadow:0 12px 30px rgba(37,99,235,0.25);
+    transition:0.25s ease;
+    box-shadow:
+        0 12px 30px rgba(37,99,235,0.22),
+        0 1px 0 rgba(255,255,255,0.15) inset;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 20px 50px rgba(37,99,235,0.35);
+    transform:translateY(-4px);
+    box-shadow:
+        0 22px 55px rgba(37,99,235,0.28);
 }
 
 /* SECTIONS */
 .section{
     padding:80px 0;
     opacity:0;
-    transform:translateY(25px);
-    transition:0.8s ease;
+    transform:translateY(30px);
+    transition:0.9s ease;
 }
 
 .section.show{
@@ -108,7 +115,6 @@ nav{
     transform:translateY(0);
 }
 
-/* HEADINGS */
 .section h2{
     font-size:30px;
     margin-bottom:22px;
@@ -124,29 +130,27 @@ nav{
     margin-top:30px;
 }
 
-/* CARD (дороже ощущение) */
+/* CARD — upgraded glass */
 .card{
-    background:rgba(255,255,255,0.78);
+    background:rgba(255,255,255,0.72);
     border:1px solid rgba(15,23,42,0.06);
-    border-radius:18px;
+    border-radius:20px;
     padding:26px;
+    text-align:center;
 
     box-shadow:
-        0 15px 40px rgba(15,23,42,0.08),
-        0 1px 0 rgba(255,255,255,0.7) inset;
+        0 20px 45px rgba(15,23,42,0.08),
+        0 1px 0 rgba(255,255,255,0.6) inset;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+
     transition:0.35s ease;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 25px 60px rgba(15,23,42,0.15);
+    transform:translateY(-10px) scale(1.01);
+    box-shadow:
+        0 30px 70px rgba(15,23,42,0.12);
 }
 
 .card h3{
@@ -156,8 +160,22 @@ nav{
 }
 
 .card p{
-    opacity:0.85;
-    line-height:1.6;
+    opacity:0.88;
+    line-height:1.7;
+}
+
+/* SOUL BLOCK */
+.soul{
+    background:rgba(255,255,255,0.65);
+    border:1px solid rgba(15,23,42,0.06);
+    padding:42px;
+    border-radius:22px;
+    text-align:center;
+    line-height:1.8;
+    color:#334155;
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,0.06);
 }
 
 /* FOOTER */
@@ -175,7 +193,7 @@ footer{
 <nav>
     <div class="nav-inner">
         <div class="logo">pelmeni.dev</div>
-        <div class="muted">быстро. просто. без лишнего</div>
+        <div>делаю просто и по делу</div>
     </div>
 </nav>
 
@@ -185,8 +203,8 @@ footer{
         <h1>pelmeni.dev</h1>
 
         <p>
-            Разрабатываю сайты и Telegram-ботов с упором на скорость, простоту и реальный результат.
-            Использую современные AI-инструменты, чтобы быстро собирать рабочие и аккуратные решения без лишней бюрократии.
+            Сайты и Telegram-боты, которые помогают людям запускать идеи, получать клиентов
+            и не тратить недели на разработку.
         </p>
 
         <a href="#contact" class="btn">Обсудить проект</a>
@@ -196,12 +214,14 @@ footer{
 <!-- ABOUT -->
 <section class="section">
     <div class="container">
-        <h2>Кто я</h2>
+        <h2>Немного обо мне</h2>
 
-        <p style="text-align:center;color:#475569;max-width:700px;margin:auto;line-height:1.6">
-            Я занимаюсь небольшими веб-проектами и автоматизацией.
-            Беру как коммерческие задачи, так и интересные идеи для портфолио — иногда даже бесплатно, если проект выглядит перспективно.
-        </p>
+        <div class="soul">
+            Я не делаю “сложные системы ради сложности”.
+            Мне нравится быстро собирать простые, понятные вещи — сайты, боты, прототипы — которые реально начинают работать сразу.
+
+            Иногда беру проекты бесплатно просто потому, что они интересные.
+        </div>
     </div>
 </section>
 
@@ -212,24 +232,24 @@ footer{
 
         <div class="grid">
             <div class="card">
+                <h3>Без лишнего шума</h3>
+                <p>Ты просто объясняешь задачу — я делаю результат.</p>
+            </div>
+
+            <div class="card">
                 <h3>Быстро</h3>
-                <p>Фокус на результате без лишних процессов и ожиданий.</p>
+                <p>Не растягиваю процесс. Важно запустить, а не обсуждать.</p>
             </div>
 
             <div class="card">
-                <h3>Просто</h3>
-                <p>Без сложных схем — только понятная разработка и общение.</p>
-            </div>
-
-            <div class="card">
-                <h3>Адекватно</h3>
-                <p>Честно говорю, что можно сделать, а что нет.</p>
+                <h3>По-человечески</h3>
+                <p>Без агентской бюрократии и сложных терминов.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SERVICES -->
+<!-- WHAT I DO -->
 <section class="section">
     <div class="container">
         <h2>Что делаю</h2>
@@ -237,41 +257,17 @@ footer{
         <div class="grid">
             <div class="card">
                 <h3>Сайты</h3>
-                <p>Лендинги, визитки, простые сервисы.</p>
+                <p>Лендинги и простые страницы, которые не стыдно показать.</p>
             </div>
 
             <div class="card">
                 <h3>Telegram-боты</h3>
-                <p>Автоматизация задач и простые системы.</p>
+                <p>Автоматизация и простые решения для бизнеса.</p>
             </div>
 
             <div class="card">
                 <h3>Прототипы</h3>
-                <p>Быстрая проверка идей и MVP.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICES -->
-<section class="section">
-    <div class="container">
-        <h2>Цены</h2>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Сайт</h3>
-                <p>от 3 000 ₽</p>
-            </div>
-
-            <div class="card">
-                <h3>Лендинг</h3>
-                <p>от 5 000 ₽</p>
-            </div>
-
-            <div class="card">
-                <h3>Бот</h3>
-                <p>от 2 500 ₽</p>
+                <p>Быстрая проверка идеи без лишних затрат.</p>
             </div>
         </div>
     </div>
@@ -282,12 +278,12 @@ footer{
     <div class="container">
         <h2>Связь</h2>
 
-        <p style="text-align:center;color:#475569;max-width:700px;margin:auto">
-            Напиши в Telegram — обсудим проект, кофе и почему сайт вообще нужен.
-        </p>
+        <div class="soul">
+            Напиши в Telegram — обсудим твою идею и поймём, можно ли быстро превратить её в рабочий проект.
+        </div>
 
         <div style="text-align:center">
-            <a href="https://t.me/yourusername" class="btn">Написать в Telegram</a>
+            <a href="https://t.me/pelmenidev" class="btn">Написать в Telegram</a>
         </div>
     </div>
 </section>
@@ -298,16 +294,20 @@ footer{
 
 <script>
 const sections = document.querySelectorAll('.section');
+const cards = document.querySelectorAll('.card');
+const souls = document.querySelectorAll('.soul');
 
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        if(e.isIntersecting){
-            e.target.classList.add('show');
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
         }
     });
 },{threshold:0.15});
 
 sections.forEach(s=>observer.observe(s));
+cards.forEach(c=>observer.observe(c));
+souls.forEach(s=>observer.observe(s));
 </script>
 
 </body>
